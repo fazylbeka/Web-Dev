@@ -2,39 +2,33 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Challenge: Position planet</title>
+        <title>Challenge: Great big font sizes</title>
         <style>
-            #greeting {
-                background: rgb(255, 255, 0);
-                border: 2px solid black;
-                font-family: "Comic Sans MS", fantasy;
-                padding: 5px;
-                width: 262px;
-                position: absolute;
-                top: 40px;
-                left: 80px;
-                z-index:2;
+            .big {
+                font-size:20px;
             }
             
-            
-            #creature {
-                position: absolute;
-                top: 120px;
-                left: 100px;
+            .bigger { 
+                font-size:23px;
             }
-
         </style>
     </head>
     <body>
-        
-        <img id="planet" src="https://www.kasandbox.org/programming-images/space/planet.png" width="300">
-        
-        <div id="greeting">
-            <p>Hello! Welcome to position planet!</p>
-        </div>
-        
-        <img id="creature" src="https://www.kasandbox.org/programming-images/avatars/mr-pink.png">
-        
+
+<h1>Great Big Words</h1>
+<h2>by Michael Mark & Tom Chapin</h2>
+
+<p>When I was a little kid,
+a "<em class="big">diminutive juvenile</em>," <br>
+I liked my folks to read to me,
+I was an <em class="big">"eager bibliophile."</em> <br>
+Now I love words for how they sound <br>
+And how they <em class="big">"communicate."</em> <br>
+Perhaps I should explain myself,
+that is, <em class="big">"elucidate."</em> <br>
+Great big words, I like <em class="big">big</em> words. <br>
+Letter by letter, the <em class="bigger">bigger</em> the better <br>
+Great big words. La la la la la la la la la la!</p>
 
     </body>
 </html>
