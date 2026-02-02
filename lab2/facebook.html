@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>facebook</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1000px;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .left-section {
+            flex: 1;
+            max-width: 580px;
+            margin-right: 60px;
+            margin-top: -100px;
+        }
+        
+        .right-section {
+            flex: 1;
+            max-width: 400px;
+        }
+        
+        h1 {
+            color: #0866FF;
+            font-size: 56px;
+            font-weight: bold;
+            margin: 0 0 16px 0;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+        
+        p.subtitle {
+            font-size: 28px;
+            color: #1c1e21;
+            line-height: 32px;
+            margin: 0;
+            font-weight: normal;
+        }
+        
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 
+                        0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        
+        .input-group {
+            margin-bottom: 12px;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 17px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #1b74e4;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+        
+        .login-btn {
+            width: 100%;
+            background-color: #0866FF;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
+        
+        .login-btn:hover {
+            background-color: #166fe5;
+        }
+        
+        .forgot-password {
+            text-align: center;
+            display: block;
+            color: #0866FF;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 16px 0;
+            border-top: 1px solid #dadde1;
+        }
+        
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .create-account {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .create-btn {
+            background-color: #42b72a;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 20px auto 0 auto;
+            display: block;
+        }
+        
+        .create-btn:hover {
+            background-color: #36a420;
+        }
+        
+        .error-message {
+            color: #f02849;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .left-section {
+                margin-right: 0;
+                margin-bottom: 40px;
+                margin-top: 0;
+                max-width: 100%;
+            }
+            
+            h1 {
+                font-size: 48px;
+            }
+            
+            p.subtitle {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h1>facebook</h1>
+            <p class="subtitle">Facebook всегда помогает вам всегда оставаться на связи и общаться со своими знакомыми</p>
+        </div>
+        
+        <div class="right-section">
+            <div class="login-container">
+                <div class="input-group">
+                    <input type="text" id="email" placeholder="Электронная почта или номер телефона">
+                    <div id="email-error" class="error-message"></div>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Пароль">
+                    <div id="password-error" class="error-message"></div>
+                </div>
+                
+                <button class="login-btn" onclick="validateForm()">Вход</button>
+                
+                <a href="#" class="forgot-password">Забыли пароль?</a>
+                
+                <div class="create-account">
+                    <button class="create-btn">Создать новый аккаунт</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const emailError = document.getElementById('email-error');
+            const passwordError = document.getElementById('password-error');
+            
+            emailError.style.display = 'none';
+            passwordError.style.display = 'none';
+            
+            let isValid = true;
+            
+            if (!email) {
+                emailError.textContent = 'Электронная почта или номер телефона обязателен';
+                emailError.style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!password) {
+                passwordError.textContent = 'Пароль обязателен';
+                passwordError.style.display = 'block';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                alert('Вход выполнен! (Это демо, данные никуда не отправляются)');
+            }
+        }
+        
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                validateForm();
+            }
+        });
+    </script>
+</body>
+</html>
