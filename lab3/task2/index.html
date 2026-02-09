@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDo List</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Иконки корзины -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-inner">ToDo List</div>
+  </header>
+
+  <main class="page">
+    <h1 class="title">ToDo List</h1>
+
+    <!-- Add form -->
+    <section class="composer">
+      <input id="taskInput" type="text" placeholder="New Task" />
+      <button id="addBtn" type="button">Add</button>
+    </section>
+
+    <!-- List -->
+    <section class="card">
+      <ul id="list" class="list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
