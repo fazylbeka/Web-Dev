@@ -1,9 +1,9 @@
 class Animal:
-    def __init__(self, name, age, sound): # 3 atributes 
+    def __init__(self, name, age, sound): 
         self.name = name
         self.age = age
         self.sound = sound
-    def speak(self): # my 2 methods 
+    def speak(self):  
         return f"{self.name} says {self.sound} "
     def get_info(self):
         return f"{self.name}, {self.age} years old"
